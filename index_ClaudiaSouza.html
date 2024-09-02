@@ -1,0 +1,140 @@
+<!-- Formulario diseñado en boostrap
+ Autor: Claudia Souza-->
+ 
+<!doctype html>
+<html lang="es">
+   <head><!--Contiene información meta un contenedor de metadatos-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Claudia Souza">
+
+        <title>Formulario para envío de emails - Con estilo</title><!--El elemento <title> especifica un título para el documento-->
+
+        <!-- Incluimos los estilos de Bootstrap 5 local -->
+        <link href="css/bootstrap.min.css" rel="stylesheet"> 
+        <link rel="stylesheet" href="css/estilob.css">             
+    </head>
+<body><!--El elemento <body> contiene el contenido visible de la página-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 min-vh-100 d-flex flex-column justify-content-center">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+    
+                        <!-- form  -->
+                        <div class="card rounded shadow shadow-sm">
+                            <div class="card-header text-center">
+                                <h3 class="mb-0">Formulario de datos personales</h3>
+                            </div>
+                            <div class="card-body">
+                                <form class="row g-3 needs-validation" autocomplete="off" novalidate="" method="POST">
+                                    <div class="form-group">
+                                        <label for="nombre_u" class="form-label">Nombre:</label>
+                                        <input type="text" class="form-control form-control-lg rounded-0" id="nombre_u" placeholder="Ingrese su nombre" required="">
+                                        <!-- Mensajes para validación   -->
+                                        <div class="invalid-feedback">Ingrese su nombre</div>
+                                        <div class="valid-feedback">Campo correcto</div>
+                                    </div>                          
+                                    <div class="form-group">
+                                        <label for="apellido_u" class="form-label">Apellido</label>
+                                        <input type="text" class="form-control form-control-lg rounded-0" id="apellido_u"  placeholder="Ingrese su apellido"  required="">
+                                        <!-- Mensajes para validación   -->
+                                        <div class="invalid-feedback">Ingrese su apellido</div>
+                                        <div class="valid-feedback">Campo correcto</div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email_u" class="form-label" placeholder="Ingrese su email" required>Email:</label>
+                                        <input id="email_u" type="email" class="form-control form-control-lg rounded-0"  placeholder="Ingrese su email" required>  
+                                        <!-- Mensajes para validación -->
+                                        <div class="invalid-feedback">Ingrese su email</div>
+                                        <div class="valid-feedback">Campo correcto</div>
+                                    </div>
+                                    <!-- Para ingresar fecha-->
+                                    <div class="form-group">
+                                         <label for="fecha_n" class="form-label">Fecha de Nacimiento:</label>             
+                                         <input id= "fecha_n" type="date" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                           <label for="reside_u" class="form-label">País de Residencia:</label>
+                                           <!-- se agregó disabled para deshabilitar su modificación-->
+                                           <input id="reside_u" type="text"  class="form-control form-control-lg rounded-0" placeholder="Argentina" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="provincia" class="form-label">Provincia</label>
+                                        <select class="form-select" id="provincia" required>
+                                            <option selected disabled value="">Seleccione...</option>
+                                            <option>Buenos Aires</option>
+                                            <option>Santa Fe</option>
+                                            <option>Cordoba</option>
+                                            <option>Mendoza</option>
+                                        </select>
+                                        <!-- Mensajes para validación   -->
+                                        <div class="valid-feedback">¡Campo válido!</div>
+                                             <div class="invalid-feedback">Debe completar los datos.</div>
+                                        </div>  
+
+                                    <div class="row w-100 align-items-center my-3">
+                                        <div class="col text-center">
+                                            <!--linea divisoria en el formulario, separandolo de los botones-->
+                                        <div class="dropdown-divider"> </div>  
+                                            <button type="submit" id="botone" class="form-control btn-primary  btn-lg">Enviar</button>
+                                        </div>                                  
+                                    </div>
+                                    <!--Botones para elegir entre dos estilos: sin contraste y el de alto contraste (accesibilidad)-->
+                                    <div class="mb-3">
+                                        <div class="container-fluid h-100"> 
+                                            <div class="row w-100 align-items-center">
+                                                <div class="col text-center">
+                                                     <button type="button" id="boton1" class="btn btn-primary"  onclick="cambiarEstilo('boton1');">Estilo SIN contraste</button>
+                                                     <button type="button" id="boton2" class="btn btn-primary" onclick="cambiarEstilo('boton2');" >Estilo CON constraste</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </form>
+                            </div>
+                            <!--/card-block-->
+                        </div>
+                        <!-- /form card login -->
+                     </div>    
+                </div>
+                <!--/row-->
+    
+            </div>
+            <!--/col-->
+        </div>
+        <!--/row-->
+    </div>
+    </body>
+    
+    <!--/container-->        
+                          
+    <!-- Incluimos javascript de Bootstrap 5 local -->
+    <script src="js/bootstrap.bundle.min.js"></script>    
+
+
+    <script>      
+        (function () {
+          'use strict'
+          // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+          var forms = document.querySelectorAll('.needs-validation')
+          //Recorremos los forms y evitamos en envío sin validacion
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {            
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }else{
+                  alert('FORMULARIO VALIDADO')
+                }
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()
+        </script>    
+        <script src="js/cambiarEstilo.js"></script>
+       
+</body>
+</html>

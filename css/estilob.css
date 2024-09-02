@@ -1,0 +1,54 @@
+/*  Autor: Claudia Souza
+ Corresponde a un formulario de envío de emails, estilo de fondo negro para el formulario,
+   
+   /*define el tema claro (light) de forma predeterminada y lo cambia a tema oscuro (dark) .
+   */
+
+   /* Modo oscuro*/
+.dark{ 
+      background-color: #000000; 
+      color: #ffffff;
+  }
+
+.dark button{
+     background-color:  #e4d062;
+     color:#000000;
+  }
+
+.dark input{
+   background-color: rgb(196, 194, 194);
+   color: #000000;
+}
+
+.dark label{
+   color: #ffffff;
+}
+
+.dark form{
+   background-color: gray;
+}
+
+.dark .card-body {
+   background-color: rgb(37, 37, 37);
+}
+
+
+.dark .card-header {
+   background-color: rgb(37, 37, 37);
+}
+
+.dark .dropdown-divider{
+   background-color: #e4d062; ;
+}
+
+/*-----------------------------------------------------*/
+  /* Modo claro y por defecto*/
+.light{ 
+      background-color: #ffffff; 
+      color: #000000; 
+  }
+
+.light button{
+   background-color:  #87b7ee;
+   color:#000000;
+  }
